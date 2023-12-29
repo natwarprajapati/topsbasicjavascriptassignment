@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mark Sheet Example</title>
+  <style>
+   
+table {
+  max-width: 600px;
+    margin: auto;
+    background: #f7f7f7;
+    padding: 20px;
+    border-radius: 5px;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd; 
+}
+
+tr:hover {background-color:#f5f5f5;
+}
+h1{
+  text-align: center;
+}
+
+  </style>
+</head>
+<body>
+ 
+
+   <h1>Marksheet for Information Technology</h1>
+   <table>
+     <tr>
+       <th>Subject</th>
+       <th>Marks</th>
+      </tr>
+      <tr>
+        <td>C Language</td>
+        <td><input id="c" type="number" ></td>
+      </tr>
+      <tr>
+        <td>C++ Language</td>
+        <td><input id="cpp" type="number"></td>
+      </tr>
+      <tr>
+        <td>Database</td>
+        <td><input id="db" type="number"></td>
+      </tr>
+      <tr>
+        <td>HTML</td>
+        <td><input id="html" type="number"></td>
+      </tr>
+      <tr>
+        <td>CSS</td>
+        <td><input id="css" type="number"></td>
+      </tr>
+      <tr>
+        <td>php</td>
+        <td><input id="php" type="number"></td>
+      </tr>
+      <tr>
+        <td>Core java</td>
+        <td><input id="java" type="number"></td>
+      </tr>
+    <tr>
+    <td><button id="result">Result</button></td>
+    <td><p id="output"></p></td>
+  </tr>
+  </table>
+
+    <script>
+    // Get the input elements
+    var c = document.getElementById("c");
+    var cpp = document.getElementById("cpp");
+    var db = document.getElementById("db");
+    var html = document.getElementById("html");
+    var css = document.getElementById("css");
+    var php = document.getElementById("php");
+    var java = document.getElementById("java");
+
+    // Get the result button
+    var result = document.getElementById("result");
+
+    // Get the output paragraph
+    var output = document.getElementById("output");
+
+    // Add a click event listener to the result button
+    result.addEventListener("click", function() {
+      // Get the values of the input elements
+      var cMarks = parseInt(c.value);
+      var cppMarks = parseInt(cpp.value);
+      var dbMarks = parseInt(db.value);
+      var htmlMarks = parseInt(html.value);
+      var cssMarks = parseInt(css.value);
+      var phpMarks = parseInt(php.value);
+      var javaMarks = parseInt(java.value);
+
+      // Calculate the total and percentage
+      var total = cMarks + cppMarks + dbMarks + htmlMarks + cssMarks + phpMarks + javaMarks;
+      var percentage = (total / 350) * 100;
+
+      // Display the output
+      output.innerHTML = "Total is: " + total + "/350 <br> Percentage is: " + percentage.toFixed(2) + "%";
+    });
+  </script>
+</body>
+</html>
